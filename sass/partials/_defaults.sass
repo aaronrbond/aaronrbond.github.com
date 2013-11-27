@@ -1,0 +1,58 @@
+@import compass/typography/links/link-colors
+
+/* =============================================================================
+   Variables
+   ========================================================================== */
+$base-font-size: 16px
+$base-line-height: 1.2
+
+$selected-bg: red
+$selected-color: green
+
+$link-color: blue
+$link-hover-color: green
+$link-active-color: red
+$link-visited-color: gray
+$link-focus-color: lime
+
+$invalid-color: red
+
+/* =============================================================================
+   Defaults
+   ========================================================================== */
+
+body
+	font-size: $base-font-size
+	line-height: $base-line-height
+	//font-family: Sans-serif
+
+// Selection
+::-moz-selection
+	background: $selected-bg
+	color: $selected-color
+::selection
+	background: $selected-bg
+	color: $selected-color
+
+// Links
+a
+	+link-colors($link-color, $link-hover-color, $link-active-color, $link-visited-color, $link-focus-color)
+a:hover, a:active
+	outline: 0
+
+// Misc.
+img
+	-ms-interpolation-mode: bicubic
+	vertical-align: middle
+
+label
+	cursor: pointer
+
+input:invalid, textarea:invalid
+	background-color: $invalid-color
+
+.chromeframe
+	margin: 0.2em 0
+	background: #ccc
+	color: black
+	padding: 0.2em 0
